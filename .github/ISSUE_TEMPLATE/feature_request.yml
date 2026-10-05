@@ -1,0 +1,16 @@
+name: Feature request
+description: Suggest an improvement to Vidrado.
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What would this help you do?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Describe the interaction and any relevant alternatives.
+    validations:
+      required: true

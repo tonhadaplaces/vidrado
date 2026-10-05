@@ -1,0 +1,2190 @@
+{
+  "version": "2.20",
+  "children": [
+    {
+      "type": "frame",
+      "id": "r8LRP",
+      "x": 0,
+      "y": 0,
+      "name": "Vidrado · Brand identity",
+      "width": 1120,
+      "height": 280,
+      "fill": "#F3F3F3",
+      "gap": 32,
+      "padding": 56,
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "i8tq5x",
+          "name": "Vidrado · Focus mark",
+          "reusable": true,
+          "clip": true,
+          "width": 96,
+          "height": 96,
+          "layout": "none",
+          "children": [
+            {
+              "type": "path",
+              "id": "es0L6",
+              "x": 12,
+              "y": 25.498449999999995,
+              "name": "Active window",
+              "geometry": "M37.80924 0l-32.5477 0c-2.97231 0-5.26154 2.30769-5.26154 5.26154l0 25.84616c0 2.99077 2.28923 5.18769 5.26154 5.18769l31.93846 0c2.99076 0 5.07692-2.19692 5.07692-5.18769l0-26.93539c0-2.41846-1.84615-4.17231-4.46769-4.17231z m-0.68309 31.1077c0 0.09231-0.05538 0.12923-0.12923 0.12923l-31.88307 0c-0.12923 0-0.20308-0.05539-0.20308-0.12923l0-25.69847c0-0.09231 0.11077-0.14769 0.35077-0.14769l31.66154 0c0.12923 0 0.20307 0.05539 0.20307 0.14769l0 25.69847z",
+              "fill": "#121212",
+              "width": 63.41535,
+              "height": 54.4431
+            },
+            {
+              "type": "path",
+              "id": "On1zx",
+              "x": 33.876900000000006,
+              "y": 16,
+              "name": "Background window",
+              "geometry": "M29.55693 0l-27.56308 0c-1.31077 0-1.99385 0.75692-1.99385 1.82769 0 1.10769 0.86769 1.86461 2.0677 1.86461l27.08307 0c0.25846 0 0.3877 0.09231 0.38769 0.29539l0 23.74154c0 1.45847 0.83077 2.12308 1.86462 2.12308 1.05231 0 1.82769-0.79384 1.82769-2.10462l0-24.07384c0-2.16-1.60616-3.67385-3.67384-3.67385z",
+              "fill": "#121212",
+              "width": 49.8462,
+              "height": 44.77845
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "t3ipe9",
+          "name": "Wordmark and promise",
+          "layout": "vertical",
+          "gap": 10,
+          "children": [
+            {
+              "type": "text",
+              "id": "xGA5N",
+              "name": "Vidrado wordmark",
+              "fill": "#171717",
+              "content": "vidrado",
+              "fontFamily": "Inter",
+              "fontSize": 64,
+              "fontWeight": "500",
+              "letterSpacing": -3
+            },
+            {
+              "type": "text",
+              "id": "U0D8Hk",
+              "name": "Brand promise",
+              "fill": "#737373",
+              "content": "Less noise. More clarity.",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ssHlL",
+          "name": "Flexible space",
+          "width": "fill_container",
+          "height": 1
+        },
+        {
+          "type": "frame",
+          "id": "Y9BgJ",
+          "name": "Brand descriptor",
+          "layout": "vertical",
+          "gap": 12,
+          "alignItems": "end",
+          "children": [
+            {
+              "type": "text",
+              "id": "drs9K",
+              "name": "Platform",
+              "fill": "#737373",
+              "content": "A QUIETER MAC",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "normal",
+              "letterSpacing": 2
+            },
+            {
+              "type": "text",
+              "id": "ssMHc",
+              "name": "Brand description",
+              "fill": "#171717",
+              "content": "One window.\nYour full attention.",
+              "textAlign": "right",
+              "fontFamily": "Inter",
+              "fontSize": 24,
+              "fontWeight": "500",
+              "letterSpacing": -0.7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "SANJA",
+      "x": 0,
+      "y": 360,
+      "name": "01 · Menu bar / Focus running",
+      "clip": true,
+      "width": 480,
+      "height": 800,
+      "fill": "#FFFFFF",
+      "cornerRadius": 18,
+      "stroke": "#e0e0e0",
+      "strokeWidth": 1,
+      "layout": "vertical",
+      "gap": 24,
+      "padding": 24,
+      "children": [
+        {
+          "type": "frame",
+          "id": "yrp3M",
+          "name": "Menu bar header",
+          "width": "fill_container",
+          "gap": 10,
+          "alignItems": "center",
+          "children": [
+            {
+              "id": "ywgf0",
+              "type": "ref",
+              "ref": "i8tq5x",
+              "name": "Vidrado logo",
+              "width": 30,
+              "height": 30,
+              "descendants": {
+                "es0L6": {
+                  "x": 3.75,
+                  "y": 7.968265624999998,
+                  "width": 19.817296875,
+                  "height": 17.01346875
+                },
+                "On1zx": {
+                  "x": 10.586531250000002,
+                  "y": 5,
+                  "width": 15.576937500000001,
+                  "height": 13.993265625
+                }
+              }
+            },
+            {
+              "type": "text",
+              "id": "CuA4Y",
+              "name": "Wordmark",
+              "fill": "#171717",
+              "content": "vidrado",
+              "fontFamily": "Inter",
+              "fontSize": 20,
+              "fontWeight": "600",
+              "letterSpacing": -0.7
+            },
+            {
+              "type": "frame",
+              "id": "ZIqtp",
+              "name": "Header space",
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "frame",
+              "id": "evtDV",
+              "name": "Open preferences",
+              "cornerRadius": 7,
+              "stroke": "#E5E5E5",
+              "strokeWidth": 1,
+              "padding": 8,
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "xOtvB",
+                  "name": "Settings",
+                  "width": 17,
+                  "height": 17,
+                  "icon": "sliders-horizontal",
+                  "library": "lucide",
+                  "fill": "#171717"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "s4ANp",
+          "name": "Focus status and preview",
+          "width": "fill_container",
+          "height": 278,
+          "fill": "#F4F4F4",
+          "cornerRadius": 12,
+          "layout": "vertical",
+          "gap": 8,
+          "padding": 24,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "fIv3q",
+              "name": "Focus state",
+              "fill": "#737373",
+              "content": "DISTRACTIONS, OUT OF SIGHT",
+              "fontFamily": "Inter",
+              "fontSize": 9,
+              "fontWeight": "600",
+              "letterSpacing": 1.4
+            },
+            {
+              "type": "text",
+              "id": "WNIVw",
+              "name": "Focus headline",
+              "fill": "#171717",
+              "content": "You’re in the clear.",
+              "fontFamily": "Inter",
+              "fontSize": 28,
+              "fontWeight": "500",
+              "letterSpacing": -1
+            },
+            {
+              "type": "frame",
+              "id": "TR0Fb",
+              "name": "Window focus visualization",
+              "width": "fill_container",
+              "height": 126,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "F8pmbO",
+                  "x": 16,
+                  "y": 28,
+                  "name": "Unfocused background window",
+                  "width": 142,
+                  "height": 80,
+                  "fill": "#CFCFCF",
+                  "cornerRadius": 5,
+                  "effect": {
+                    "type": "blur",
+                    "radius": 7
+                  },
+                  "layout": "vertical",
+                  "gap": 9,
+                  "padding": 14,
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 2,
+                      "id": "FEWG5",
+                      "name": "Background line",
+                      "fill": "#A8A8A8",
+                      "width": 95,
+                      "height": 4
+                    },
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 2,
+                      "id": "D8WDp5",
+                      "name": "Background line",
+                      "fill": "#A8A8A8",
+                      "width": 66,
+                      "height": 4
+                    },
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 2,
+                      "id": "i9xqP",
+                      "name": "Background line",
+                      "fill": "#A8A8A8",
+                      "width": 82,
+                      "height": 4
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "sEGH1",
+                  "x": 210,
+                  "y": 28,
+                  "name": "Unfocused background window",
+                  "width": 142,
+                  "height": 80,
+                  "fill": "#CFCFCF",
+                  "cornerRadius": 5,
+                  "effect": {
+                    "type": "blur",
+                    "radius": 7
+                  },
+                  "layout": "vertical",
+                  "gap": 9,
+                  "padding": 14,
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 2,
+                      "id": "hw6GL",
+                      "name": "Background line",
+                      "fill": "#A8A8A8",
+                      "width": 95,
+                      "height": 4
+                    },
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 2,
+                      "id": "zaaGL",
+                      "name": "Background line",
+                      "fill": "#A8A8A8",
+                      "width": 66,
+                      "height": 4
+                    },
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 2,
+                      "id": "XHmnK",
+                      "name": "Background line",
+                      "fill": "#A8A8A8",
+                      "width": 82,
+                      "height": 4
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "yz9jv",
+                  "x": 94,
+                  "y": 12,
+                  "name": "Clear active window",
+                  "width": 196,
+                  "height": 108,
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 7,
+                  "stroke": "#DCDCDC",
+                  "strokeWidth": 1,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000010",
+                    "offset": {
+                      "x": 0,
+                      "y": 6
+                    },
+                    "blur": 18
+                  },
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": 15,
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "RedBK",
+                      "name": "Active document",
+                      "width": 15,
+                      "height": 15,
+                      "icon": "file-text",
+                      "library": "lucide",
+                      "fill": "#171717"
+                    },
+                    {
+                      "type": "text",
+                      "id": "w2YY7x",
+                      "name": "Document message",
+                      "fill": "#252525",
+                      "content": "Just this. Nothing else.",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "huJ0k",
+                      "name": "Document line",
+                      "fill": "#E2E2E2",
+                      "width": 135,
+                      "height": 3
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "D5EDSr",
+              "name": "Active application",
+              "gap": 7,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "F2jbNK",
+                  "name": "Active indicator",
+                  "fill": "#171717",
+                  "width": 5,
+                  "height": 5
+                },
+                {
+                  "type": "text",
+                  "id": "u503c",
+                  "name": "Active app",
+                  "fill": "#737373",
+                  "content": "Following your active window",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "XRaBN",
+          "name": "Pause focus primary action",
+          "width": "fill_container",
+          "height": 52,
+          "fill": "#181818",
+          "cornerRadius": 9,
+          "gap": 10,
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon",
+              "id": "W3i38A",
+              "name": "Pause",
+              "width": 17,
+              "height": 17,
+              "icon": "pause",
+              "library": "lucide",
+              "fill": "#FFFFFF"
+            },
+            {
+              "type": "text",
+              "id": "YC0Vw",
+              "name": "Pause action",
+              "fill": "#FFFFFF",
+              "content": "Pause focus",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "500"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "SJev9",
+          "name": "Single intensity control",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "children": [
+            {
+              "type": "frame",
+              "id": "PZQaO",
+              "name": "Intensity label",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "lU7qH",
+                  "name": "Intensity",
+                  "fill": "#252525",
+                  "content": "Hide distractions",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "GBPIb",
+                  "name": "Value",
+                  "fill": "#737373",
+                  "content": "65%",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "uiLLh",
+              "name": "Distraction intensity slider",
+              "width": "fill_container",
+              "height": 18,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 2,
+                  "id": "htrtH",
+                  "x": 0,
+                  "y": 7,
+                  "name": "Slider background",
+                  "fill": "#E8E8E8",
+                  "width": 432,
+                  "height": 4
+                },
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 2,
+                  "id": "urlhL",
+                  "x": 0,
+                  "y": 7,
+                  "name": "Slider progress",
+                  "fill": "#222222",
+                  "width": 281,
+                  "height": 4
+                },
+                {
+                  "type": "ellipse",
+                  "id": "RlIgB",
+                  "x": 272,
+                  "y": 0,
+                  "name": "Slider thumb",
+                  "fill": "#FFFFFF",
+                  "width": 18,
+                  "height": 18,
+                  "stroke": "#222222",
+                  "strokeWidth": 2
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "puMpu",
+              "name": "Intensity scale",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "kKjFQ",
+                  "name": "Subtle",
+                  "fill": "#8A8A8A",
+                  "content": "A little quieter",
+                  "fontFamily": "Inter",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "o86JD6",
+                  "name": "Strong",
+                  "fill": "#8A8A8A",
+                  "content": "Nothing but focus",
+                  "fontFamily": "Inter",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "lerfj",
+          "name": "One-click focus modes",
+          "width": "fill_container",
+          "gap": 8,
+          "children": [
+            {
+              "type": "frame",
+              "id": "WE7dA",
+              "name": "Light mode",
+              "width": "fill_container",
+              "height": 42,
+              "fill": "#FFFFFF",
+              "cornerRadius": 7,
+              "stroke": "#E5E5E5",
+              "strokeWidth": 1,
+              "gap": 7,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "QWMlM",
+                  "name": "Light icon",
+                  "width": 15,
+                  "height": 15,
+                  "icon": "sun",
+                  "library": "lucide",
+                  "fill": "#171717"
+                },
+                {
+                  "type": "text",
+                  "id": "HKp6l",
+                  "name": "Light",
+                  "fill": "#363636",
+                  "content": "Light",
+                  "fontFamily": "Inter",
+                  "fontSize": 11
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "fdpR2",
+              "name": "Balanced mode",
+              "width": "fill_container",
+              "height": 42,
+              "fill": "#EEEEEE",
+              "cornerRadius": 7,
+              "stroke": "#222222",
+              "strokeWidth": 1,
+              "gap": 7,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "ey5HT",
+                  "name": "Balanced icon",
+                  "width": 15,
+                  "height": 15,
+                  "icon": "circle-dot",
+                  "library": "lucide",
+                  "fill": "#171717"
+                },
+                {
+                  "type": "text",
+                  "id": "qW7a2",
+                  "name": "Balanced",
+                  "fill": "#363636",
+                  "content": "Balanced",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "IvCqJ",
+              "name": "Deep mode",
+              "width": "fill_container",
+              "height": 42,
+              "fill": "#FFFFFF",
+              "cornerRadius": 7,
+              "stroke": "#E5E5E5",
+              "strokeWidth": 1,
+              "gap": 7,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "SSlcd",
+                  "name": "Deep icon",
+                  "width": 15,
+                  "height": 15,
+                  "icon": "eclipse",
+                  "library": "lucide",
+                  "fill": "#171717"
+                },
+                {
+                  "type": "text",
+                  "id": "ZhDSH",
+                  "name": "Deep",
+                  "fill": "#363636",
+                  "content": "Deep",
+                  "fontFamily": "Inter",
+                  "fontSize": 11
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "e8x3Fo",
+          "name": "Application exceptions entry",
+          "width": "fill_container",
+          "stroke": "#EAEAEA",
+          "strokeWidth": {
+            "top": 1
+          },
+          "gap": 10,
+          "padding": [
+            16,
+            0
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon",
+              "id": "XrW0E",
+              "name": "Exceptions icon",
+              "width": 18,
+              "height": 18,
+              "icon": "panels-top-left",
+              "library": "lucide",
+              "fill": "#171717"
+            },
+            {
+              "type": "text",
+              "id": "pssPp",
+              "name": "Exceptions label",
+              "fill": "#171717",
+              "content": "Keep some apps clear",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "JvvlA",
+              "name": "Row space",
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "text",
+              "id": "JTEgq",
+              "name": "Exception count",
+              "fill": "#888888",
+              "content": "2 apps",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "icon",
+              "id": "qnF9T",
+              "name": "Open exceptions",
+              "width": 15,
+              "height": 15,
+              "icon": "chevron-right",
+              "library": "lucide",
+              "fill": "#888888"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "v4c1O",
+          "name": "Quick access footer",
+          "width": "fill_container",
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "eNg4d",
+              "name": "Shortcut hint",
+              "fill": "#888888",
+              "content": "⌥ ⌘ B  to toggle anytime",
+              "fontFamily": "Inter",
+              "fontSize": 10,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "KGovt",
+              "name": "Local badge",
+              "fill": "#888888",
+              "content": "On-device. Always.",
+              "fontFamily": "Inter",
+              "fontSize": 10,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "k4AX8",
+      "x": 560,
+      "y": 360,
+      "name": "02 · App rules / Inline exceptions",
+      "clip": true,
+      "width": 480,
+      "height": 800,
+      "fill": "#FFFFFF",
+      "cornerRadius": 18,
+      "stroke": "#e0e0e0",
+      "strokeWidth": 1,
+      "layout": "vertical",
+      "gap": 24,
+      "padding": 24,
+      "children": [
+        {
+          "type": "frame",
+          "id": "DO4JB",
+          "name": "Back navigation",
+          "width": "fill_container",
+          "gap": 8,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon",
+              "id": "zqEpV",
+              "name": "Back to focus",
+              "width": 18,
+              "height": 18,
+              "icon": "arrow-left",
+              "library": "lucide",
+              "fill": "#171717"
+            },
+            {
+              "type": "text",
+              "id": "Uw3ny",
+              "name": "Back label",
+              "fill": "#171717",
+              "content": "Focus",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "rWGXN",
+              "name": "Space",
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "text",
+              "id": "xu5ii",
+              "name": "Save status",
+              "fill": "#888888",
+              "content": "Changes saved",
+              "fontFamily": "Inter",
+              "fontSize": 10,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "X1QUvO",
+          "name": "Rules heading",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 10,
+          "children": [
+            {
+              "type": "text",
+              "id": "b23SS",
+              "name": "Title",
+              "fill": "#171717",
+              "content": "Your apps. Your rules.",
+              "fontFamily": "Inter",
+              "fontSize": 27,
+              "fontWeight": "500",
+              "letterSpacing": -1
+            },
+            {
+              "type": "text",
+              "id": "aW5tf",
+              "name": "Description",
+              "fill": "#777777",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Decide what fades into the background.\nYour active window always stays clear.",
+              "lineHeight": 1.6,
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ysGad",
+          "name": "Search installed applications",
+          "width": "fill_container",
+          "height": 42,
+          "fill": "#F5F5F5",
+          "cornerRadius": 7,
+          "gap": 10,
+          "padding": [
+            0,
+            13
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon",
+              "id": "BnNuk",
+              "name": "Search",
+              "width": 16,
+              "height": 16,
+              "icon": "search",
+              "library": "lucide",
+              "fill": "#888888"
+            },
+            {
+              "type": "text",
+              "id": "KMwrv",
+              "name": "Search placeholder",
+              "fill": "#929292",
+              "content": "Find an app…",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "REX5N",
+          "name": "Applications and rules",
+          "width": "fill_container",
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "aEWaB",
+              "name": "List header",
+              "width": "fill_container",
+              "padding": [
+                0,
+                0,
+                10,
+                0
+              ],
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Pm3xs",
+                  "name": "Apps label",
+                  "fill": "#888888",
+                  "content": "APPLICATION",
+                  "fontFamily": "Inter",
+                  "fontSize": 9,
+                  "fontWeight": "normal",
+                  "letterSpacing": 1
+                },
+                {
+                  "type": "text",
+                  "id": "vpp1p",
+                  "name": "Rules label",
+                  "fill": "#888888",
+                  "content": "BEHAVIOR",
+                  "fontFamily": "Inter",
+                  "fontSize": 9,
+                  "fontWeight": "normal",
+                  "letterSpacing": 1
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "SBG28",
+              "name": "Notes rule",
+              "width": "fill_container",
+              "height": 67,
+              "stroke": "#EEEEEE",
+              "strokeWidth": {
+                "top": 1
+              },
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "DJR5L",
+                  "name": "Notes icon tile",
+                  "width": 34,
+                  "height": 34,
+                  "fill": "#F4F4F4",
+                  "cornerRadius": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "UTzst",
+                      "name": "Notes icon",
+                      "width": 17,
+                      "height": 17,
+                      "icon": "notebook-pen",
+                      "library": "lucide",
+                      "fill": "#555555"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "WsXlW",
+                  "name": "Notes name",
+                  "fill": "#303030",
+                  "content": "Notes",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "frame",
+                  "id": "kgH4C",
+                  "name": "Flexible space",
+                  "width": "fill_container",
+                  "height": 1
+                },
+                {
+                  "type": "frame",
+                  "id": "i8mZb",
+                  "name": "Notes rule selector",
+                  "cornerRadius": 5,
+                  "gap": 7,
+                  "padding": [
+                    7,
+                    9
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "zZ3sp",
+                      "name": "Notes rule value",
+                      "fill": "#999999",
+                      "content": "Auto blur",
+                      "fontFamily": "Inter",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "icon",
+                      "id": "GdhZ4",
+                      "name": "Change rule",
+                      "width": 12,
+                      "height": 12,
+                      "icon": "chevron-down",
+                      "library": "lucide",
+                      "fill": "#888888"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "GH2DM",
+              "name": "Safari rule",
+              "width": "fill_container",
+              "height": 67,
+              "stroke": "#EEEEEE",
+              "strokeWidth": {
+                "top": 1
+              },
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "bPFq7",
+                  "name": "Safari icon tile",
+                  "width": 34,
+                  "height": 34,
+                  "fill": "#F4F4F4",
+                  "cornerRadius": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "m45tk",
+                      "name": "Safari icon",
+                      "width": 17,
+                      "height": 17,
+                      "icon": "compass",
+                      "library": "lucide",
+                      "fill": "#555555"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "Q3fldN",
+                  "name": "Safari name",
+                  "fill": "#303030",
+                  "content": "Safari",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "frame",
+                  "id": "UZAEa",
+                  "name": "Flexible space",
+                  "width": "fill_container",
+                  "height": 1
+                },
+                {
+                  "type": "frame",
+                  "id": "XOrrh",
+                  "name": "Safari rule selector",
+                  "cornerRadius": 5,
+                  "gap": 7,
+                  "padding": [
+                    7,
+                    9
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Y0Xcc",
+                      "name": "Safari rule value",
+                      "fill": "#999999",
+                      "content": "Auto blur",
+                      "fontFamily": "Inter",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "icon",
+                      "id": "c2pCn",
+                      "name": "Change rule",
+                      "width": 12,
+                      "height": 12,
+                      "icon": "chevron-down",
+                      "library": "lucide",
+                      "fill": "#888888"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "fzExe",
+              "name": "Music rule",
+              "width": "fill_container",
+              "height": 67,
+              "stroke": "#EEEEEE",
+              "strokeWidth": {
+                "top": 1
+              },
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Z2ZlK",
+                  "name": "Music icon tile",
+                  "width": 34,
+                  "height": 34,
+                  "fill": "#F4F4F4",
+                  "cornerRadius": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "x3eI6",
+                      "name": "Music icon",
+                      "width": 17,
+                      "height": 17,
+                      "icon": "music-2",
+                      "library": "lucide",
+                      "fill": "#555555"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "Z2lboH",
+                  "name": "Music name",
+                  "fill": "#303030",
+                  "content": "Music",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "frame",
+                  "id": "yEo84",
+                  "name": "Flexible space",
+                  "width": "fill_container",
+                  "height": 1
+                },
+                {
+                  "type": "frame",
+                  "id": "M6ZQJ",
+                  "name": "Music rule selector",
+                  "fill": "#ECECEC",
+                  "cornerRadius": 5,
+                  "gap": 7,
+                  "padding": [
+                    7,
+                    9
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "OiRlL",
+                      "name": "Music rule value",
+                      "fill": "#333333",
+                      "content": "Keep clear",
+                      "fontFamily": "Inter",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "icon",
+                      "id": "vewy1",
+                      "name": "Change rule",
+                      "width": 12,
+                      "height": 12,
+                      "icon": "chevron-down",
+                      "library": "lucide",
+                      "fill": "#888888"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "HyFu2",
+              "name": "Calculator rule",
+              "width": "fill_container",
+              "height": 67,
+              "stroke": "#EEEEEE",
+              "strokeWidth": {
+                "top": 1
+              },
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "uUouR",
+                  "name": "Calculator icon tile",
+                  "width": 34,
+                  "height": 34,
+                  "fill": "#F4F4F4",
+                  "cornerRadius": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "C6sYHk",
+                      "name": "Calculator icon",
+                      "width": 17,
+                      "height": 17,
+                      "icon": "calculator",
+                      "library": "lucide",
+                      "fill": "#555555"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "N5vlj",
+                  "name": "Calculator name",
+                  "fill": "#303030",
+                  "content": "Calculator",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "frame",
+                  "id": "tWKjH",
+                  "name": "Flexible space",
+                  "width": "fill_container",
+                  "height": 1
+                },
+                {
+                  "type": "frame",
+                  "id": "bWd0d",
+                  "name": "Calculator rule selector",
+                  "fill": "#ECECEC",
+                  "cornerRadius": 5,
+                  "gap": 7,
+                  "padding": [
+                    7,
+                    9
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "cy5sD",
+                      "name": "Calculator rule value",
+                      "fill": "#333333",
+                      "content": "Keep clear",
+                      "fontFamily": "Inter",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "icon",
+                      "id": "m06GL",
+                      "name": "Change rule",
+                      "width": 12,
+                      "height": 12,
+                      "icon": "chevron-down",
+                      "library": "lucide",
+                      "fill": "#888888"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "VGznf",
+              "name": "Keynote rule",
+              "width": "fill_container",
+              "height": 67,
+              "stroke": "#EEEEEE",
+              "strokeWidth": {
+                "top": 1
+              },
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "M20zy",
+                  "name": "Keynote icon tile",
+                  "width": 34,
+                  "height": 34,
+                  "fill": "#F4F4F4",
+                  "cornerRadius": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "nfeWu",
+                      "name": "Keynote icon",
+                      "width": 17,
+                      "height": 17,
+                      "icon": "presentation",
+                      "library": "lucide",
+                      "fill": "#555555"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "CXDX7",
+                  "name": "Keynote name",
+                  "fill": "#303030",
+                  "content": "Keynote",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "frame",
+                  "id": "sldUN",
+                  "name": "Flexible space",
+                  "width": "fill_container",
+                  "height": 1
+                },
+                {
+                  "type": "frame",
+                  "id": "shc8d",
+                  "name": "Keynote rule selector",
+                  "cornerRadius": 5,
+                  "gap": 7,
+                  "padding": [
+                    7,
+                    9
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "V3vSh",
+                      "name": "Keynote rule value",
+                      "fill": "#333333",
+                      "content": "Pause focus",
+                      "fontFamily": "Inter",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "icon",
+                      "id": "k114uP",
+                      "name": "Change rule",
+                      "width": 12,
+                      "height": 12,
+                      "icon": "chevron-down",
+                      "library": "lucide",
+                      "fill": "#888888"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "x6V2TP",
+              "name": "FaceTime rule",
+              "width": "fill_container",
+              "height": 67,
+              "stroke": "#EEEEEE",
+              "strokeWidth": {
+                "top": 1
+              },
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "bUrYl",
+                  "name": "FaceTime icon tile",
+                  "width": 34,
+                  "height": 34,
+                  "fill": "#F4F4F4",
+                  "cornerRadius": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "pkdqS",
+                      "name": "FaceTime icon",
+                      "width": 17,
+                      "height": 17,
+                      "icon": "video",
+                      "library": "lucide",
+                      "fill": "#555555"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "X2P2hb",
+                  "name": "FaceTime name",
+                  "fill": "#303030",
+                  "content": "FaceTime",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "frame",
+                  "id": "nBo6G",
+                  "name": "Flexible space",
+                  "width": "fill_container",
+                  "height": 1
+                },
+                {
+                  "type": "frame",
+                  "id": "pUJZ9",
+                  "name": "FaceTime rule selector",
+                  "cornerRadius": 5,
+                  "gap": 7,
+                  "padding": [
+                    7,
+                    9
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "a5xwBe",
+                      "name": "FaceTime rule value",
+                      "fill": "#333333",
+                      "content": "Pause focus",
+                      "fontFamily": "Inter",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "icon",
+                      "id": "b78CdD",
+                      "name": "Change rule",
+                      "width": 12,
+                      "height": 12,
+                      "icon": "chevron-down",
+                      "library": "lucide",
+                      "fill": "#888888"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "GOuTi",
+          "name": "Rules help",
+          "width": "fill_container",
+          "gap": 10,
+          "children": [
+            {
+              "type": "icon",
+              "id": "WjOra",
+              "name": "Info",
+              "width": 15,
+              "height": 15,
+              "icon": "info",
+              "library": "lucide",
+              "fill": "#888888"
+            },
+            {
+              "type": "text",
+              "id": "czinJ",
+              "name": "Rule explanation",
+              "fill": "#888888",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "“Pause focus” turns off the effect whenever that app is active. No need to toggle it yourself.",
+              "lineHeight": 1.6,
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "F4Enr",
+      "x": 1120,
+      "y": 360,
+      "name": "03 · Preferences / Progressive controls",
+      "clip": true,
+      "width": 480,
+      "height": 800,
+      "fill": "#FFFFFF",
+      "cornerRadius": 18,
+      "stroke": "#e0e0e0",
+      "strokeWidth": 1,
+      "layout": "vertical",
+      "gap": 24,
+      "padding": 24,
+      "children": [
+        {
+          "type": "frame",
+          "id": "azuGR",
+          "name": "Back navigation",
+          "width": "fill_container",
+          "gap": 8,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon",
+              "id": "R0J4X",
+              "name": "Back to focus",
+              "width": 18,
+              "height": 18,
+              "icon": "arrow-left",
+              "library": "lucide",
+              "fill": "#171717"
+            },
+            {
+              "type": "text",
+              "id": "HO5hu",
+              "name": "Back label",
+              "fill": "#171717",
+              "content": "Focus",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "zLzm4",
+              "name": "Space",
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "text",
+              "id": "QGLDn",
+              "name": "Save status",
+              "fill": "#888888",
+              "content": "Changes saved",
+              "fontFamily": "Inter",
+              "fontSize": 10,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Ufvpm",
+          "name": "Preferences heading",
+          "layout": "vertical",
+          "gap": 10,
+          "children": [
+            {
+              "type": "text",
+              "id": "G8Nl3J",
+              "name": "Title",
+              "fill": "#171717",
+              "content": "Set it. Forget it.",
+              "fontFamily": "Inter",
+              "fontSize": 27,
+              "fontWeight": "500",
+              "letterSpacing": -1
+            },
+            {
+              "type": "text",
+              "id": "BFoNd",
+              "name": "Subtitle",
+              "fill": "#777777",
+              "content": "A few details. Then back to your work.",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "eOkXE",
+          "name": "Effect type section",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 12,
+          "children": [
+            {
+              "type": "text",
+              "id": "t4bF0H",
+              "name": "Section label",
+              "fill": "#888888",
+              "content": "BACKGROUND EFFECT",
+              "fontFamily": "Inter",
+              "fontSize": 9,
+              "fontWeight": "normal",
+              "letterSpacing": 1
+            },
+            {
+              "type": "frame",
+              "id": "QvhCT",
+              "name": "Effect options",
+              "width": "fill_container",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "K6RaXE",
+                  "name": "Blur option",
+                  "width": "fill_container",
+                  "height": 74,
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 7,
+                  "stroke": "#E5E5E5",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "Y3qHgH",
+                      "name": "Blur icon",
+                      "width": 19,
+                      "height": 19,
+                      "icon": "droplets",
+                      "library": "lucide",
+                      "fill": "#171717"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ObeZc",
+                      "name": "Blur",
+                      "fill": "#171717",
+                      "content": "Blur",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "awsnL",
+                  "name": "Dim option",
+                  "width": "fill_container",
+                  "height": 74,
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 7,
+                  "stroke": "#E5E5E5",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "l5blVO",
+                      "name": "Dim icon",
+                      "width": 19,
+                      "height": 19,
+                      "icon": "moon",
+                      "library": "lucide",
+                      "fill": "#171717"
+                    },
+                    {
+                      "type": "text",
+                      "id": "o3rCak",
+                      "name": "Dim",
+                      "fill": "#171717",
+                      "content": "Dim",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "sw22m",
+                  "name": "Both option",
+                  "width": "fill_container",
+                  "height": 74,
+                  "fill": "#F1F1F1",
+                  "cornerRadius": 7,
+                  "stroke": "#222222",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "QrJ2j",
+                      "name": "Both icon",
+                      "width": 19,
+                      "height": 19,
+                      "icon": "blend",
+                      "library": "lucide",
+                      "fill": "#171717"
+                    },
+                    {
+                      "type": "text",
+                      "id": "NE06g",
+                      "name": "Both",
+                      "fill": "#171717",
+                      "content": "Both",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Afwfa",
+          "name": "Automatic behavior",
+          "width": "fill_container",
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "text",
+              "id": "H88i8y",
+              "name": "Automation label",
+              "fill": "#888888",
+              "content": "MAKE IT AUTOMATIC",
+              "fontFamily": "Inter",
+              "fontSize": 9,
+              "fontWeight": "normal",
+              "letterSpacing": 1
+            },
+            {
+              "type": "frame",
+              "id": "llkwR",
+              "name": "Launch at login row",
+              "width": "fill_container",
+              "stroke": "#EEEEEE",
+              "strokeWidth": {
+                "bottom": 1
+              },
+              "gap": 12,
+              "padding": [
+                16,
+                0
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "nJ09X",
+                  "name": "Launch at login text",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 5,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "oqUHy",
+                      "name": "Launch at login",
+                      "fill": "#252525",
+                      "content": "Launch at login",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "cX3hV",
+                      "name": "Launch at login helper",
+                      "fill": "#888888",
+                      "content": "Ready when your Mac is.",
+                      "fontFamily": "Inter",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "lElmx",
+                  "name": "Launch at login toggle",
+                  "width": 32,
+                  "height": 19,
+                  "fill": "#222222",
+                  "cornerRadius": 12,
+                  "padding": 3,
+                  "justifyContent": "end",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "ellipse",
+                      "id": "t15hb",
+                      "name": "Toggle handle",
+                      "fill": "#FFFFFF",
+                      "width": 13,
+                      "height": 13
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ByQXl",
+              "name": "Focus across all displays row",
+              "width": "fill_container",
+              "stroke": "#EEEEEE",
+              "strokeWidth": {
+                "bottom": 1
+              },
+              "gap": 12,
+              "padding": [
+                16,
+                0
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "QTEVZ",
+                  "name": "Focus across all displays text",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 5,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "gZ8QG",
+                      "name": "Focus across all displays",
+                      "fill": "#252525",
+                      "content": "Focus across all displays",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "uIHwd",
+                      "name": "Focus across all displays helper",
+                      "fill": "#888888",
+                      "content": "One workspace, fewer distractions.",
+                      "fontFamily": "Inter",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "zngYa",
+                  "name": "Focus across all displays toggle",
+                  "width": 32,
+                  "height": 19,
+                  "fill": "#222222",
+                  "cornerRadius": 12,
+                  "padding": 3,
+                  "justifyContent": "end",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "ellipse",
+                      "id": "DPVrq",
+                      "name": "Toggle handle",
+                      "fill": "#FFFFFF",
+                      "width": 13,
+                      "height": 13
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "uZrMr",
+              "name": "Keep split windows clear row",
+              "width": "fill_container",
+              "stroke": "#EEEEEE",
+              "strokeWidth": {
+                "bottom": 1
+              },
+              "gap": 12,
+              "padding": [
+                16,
+                0
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "djZu6",
+                  "name": "Keep split windows clear text",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 5,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "gXHi0",
+                      "name": "Keep split windows clear",
+                      "fill": "#252525",
+                      "content": "Keep split windows clear",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "M0vvNh",
+                      "name": "Keep split windows clear helper",
+                      "fill": "#888888",
+                      "content": "Work with two windows, side by side.",
+                      "fontFamily": "Inter",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "iIaIj",
+                  "name": "Keep split windows clear toggle",
+                  "width": 32,
+                  "height": 19,
+                  "fill": "#222222",
+                  "cornerRadius": 12,
+                  "padding": 3,
+                  "justifyContent": "end",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "ellipse",
+                      "id": "AvMcZ",
+                      "name": "Toggle handle",
+                      "fill": "#FFFFFF",
+                      "width": 13,
+                      "height": 13
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "S5NmQ1",
+          "name": "Automatic pause summary",
+          "width": "fill_container",
+          "gap": 10,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon",
+              "id": "xhPW7",
+              "name": "Automatic pause icon",
+              "width": 17,
+              "height": 17,
+              "icon": "pause",
+              "library": "lucide",
+              "fill": "#171717"
+            },
+            {
+              "type": "frame",
+              "id": "KE63I",
+              "name": "Automatic pause text",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 5,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "CxmbL",
+                  "name": "Automatic pause title",
+                  "fill": "#252525",
+                  "content": "Know when to step aside",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "hHyms",
+                  "name": "Automatic pause summary",
+                  "fill": "#888888",
+                  "content": "Full screen & screen sharing",
+                  "fontFamily": "Inter",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "icon",
+              "id": "mswSS",
+              "name": "Expand pause options",
+              "width": 16,
+              "height": 16,
+              "icon": "chevron-right",
+              "library": "lucide",
+              "fill": "#888888"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "juIP8",
+          "name": "Shortcut settings",
+          "width": "fill_container",
+          "stroke": "#EEEEEE",
+          "strokeWidth": {
+            "top": 1,
+            "bottom": 1
+          },
+          "padding": [
+            17,
+            0
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "Ina5v",
+              "name": "Shortcut label",
+              "fill": "#171717",
+              "content": "Keyboard shortcut",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "WMFwQ",
+              "name": "Keyboard shortcut button",
+              "fill": "#F3F3F3",
+              "cornerRadius": 5,
+              "padding": [
+                8,
+                12
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "O7VzF6",
+                  "name": "Shortcut value",
+                  "fill": "#171717",
+                  "content": "⌥  ⌘  B",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "twuWZ",
+          "name": "Advanced settings disclosure",
+          "width": "fill_container",
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "prqgZ",
+              "name": "Advanced title",
+              "fill": "#777777",
+              "content": "More options",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "icon",
+              "id": "h6zlQZ",
+              "name": "Expand advanced options",
+              "width": 15,
+              "height": 15,
+              "icon": "plus",
+              "library": "lucide",
+              "fill": "#888888"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "MRDel",
+          "name": "Private by design",
+          "width": "fill_container",
+          "fill": "#F6F6F6",
+          "cornerRadius": 8,
+          "gap": 10,
+          "padding": 15,
+          "children": [
+            {
+              "type": "icon",
+              "id": "V1gXb",
+              "name": "Local privacy",
+              "width": 17,
+              "height": 17,
+              "icon": "shield-check",
+              "library": "lucide",
+              "fill": "#777777"
+            },
+            {
+              "type": "text",
+              "id": "QVvLW",
+              "name": "Privacy copy",
+              "fill": "#777777",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "No recordings. No uploads.\nEverything stays on your Mac.",
+              "lineHeight": 1.6,
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fileToken": "4efa48be-83cf-4a88-aa82-4aef1ee3cf76"
+}

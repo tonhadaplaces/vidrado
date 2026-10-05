@@ -1,0 +1,58 @@
+name: Release
+
+on:
+  push:
+    tags: ['v[0-9]*']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Build and publish release
+    runs-on: macos-15
+    timeout-minutes: 30
+    env:
+      VIDRADO_UNIVERSAL: '1'
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+      - name: Verify release tag and version
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          [[ "$RELEASE_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          git merge-base --is-ancestor HEAD origin/main
+          app_version=$(/usr/libexec/PlistBuddy -c 'Print CFBundleShortVersionString' Resources/Info.plist)
+          [[ "${RELEASE_TAG#v}" == "$app_version" ]]
+      - name: Run tests
+        run: swift test
+      - name: Package universal app
+        run: ./scripts/package.sh
+      - name: Verify architectures and checksum
+        run: |
+          lipo -verify_arch arm64 x86_64 dist/Vidrado.app/Contents/MacOS/Vidrado
+          cd dist
+          shasum -a 256 -c Vidrado.dmg.sha256
+      - name: Preserve release artifacts
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: Vidrado-universal
+          path: |
+            dist/Vidrado.dmg
+            dist/Vidrado.dmg.sha256
+          if-no-files-found: error
+      - name: Publish GitHub release
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          gh release create "$RELEASE_TAG" dist/Vidrado.dmg dist/Vidrado.dmg.sha256 \
+            --verify-tag --generate-notes --title "Vidrado ${RELEASE_TAG#v}" \
+            --notes-file .github/RELEASE_NOTES.md

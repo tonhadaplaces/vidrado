@@ -1,0 +1,29 @@
+name: Bug report
+description: Report a reproducible problem with Vidrado.
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Vidrado version
+      placeholder: '1.0.0'
+    validations:
+      required: true
+  - type: input
+    id: system
+    attributes:
+      label: macOS version and Mac architecture
+      placeholder: macOS 14.7, Apple silicon
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Include expected and actual behavior, effect mode, and relevant app rules.
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Screenshots or extra details
+      description: Remove private information before attaching screenshots or diagnostics.

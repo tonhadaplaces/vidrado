@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test-and-build:
+    name: Test and build
+    runs-on: macos-15
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Run core tests
+        run: swift test
+      - name: Validate localization catalogs
+        run: find Sources/VidradoCore/Resources -name Localizable.strings -exec plutil -lint {} +
+      - name: Build and verify app
+        run: ./scripts/build.sh
+      - name: Validate app metadata
+        run: plutil -lint Resources/Info.plist
