@@ -71,7 +71,7 @@ enum NativeChecks {
         let engine = FocusEngine(store: liveStore)
         engine.refresh()
         RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.1))
-        check(engine.isApplying && engine.visiblePanelCount == NSScreen.screens.count, "Live engine covers every connected display")
+        check(engine.isApplying && engine.coveredDisplayCount == NSScreen.screens.count && engine.visiblePanelCount > 0, "Live engine covers every connected display")
         let ordered = WindowServer.windows().filter { $0.layer == 0 }
         let frontPID = NSWorkspace.shared.frontmostApplication?.processIdentifier
         if let activeIndex = ordered.firstIndex(where: { $0.pid == frontPID }),
