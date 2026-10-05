@@ -168,13 +168,12 @@ import ServiceManagement
             let panel = panels[id] ?? OverlayPanel(frame: screen.frame)
             panels[id] = panel
             if panel.frame != screen.frame { panel.setFrame(screen.frame, display: true) }
-            let remainder = FocusGeometry.subtract(holes, from: displayRects[index])
-            if remainder.isEmpty { panel.orderOut(nil); continue }
-            let local = remainder.map { $0.offsetBy(dx: -displayRects[index].minX, dy: -displayRects[index].minY) }
+            let region = FocusGeometry.shapeRegion(holes: holes, display: displayRects[index])
+            if region.isEmpty { panel.orderOut(nil); continue }
             panel.backgroundColor = NSColor.black.withAlphaComponent(max(0.001, p.dimOpacity))
             panel.order(.below, relativeTo: Int(active.id))
             let blurOK = server.setBlur(window: panel, radius: p.blurRadius)
-            let shapeOK = server.setShape(window: panel, rectangles: local)
+            let shapeOK = server.setShape(window: panel, rectangles: region)
             if !shapeOK && !holes.isEmpty { panel.orderOut(nil) }
             failed = failed || !blurOK || !shapeOK
         }
