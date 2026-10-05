@@ -89,6 +89,9 @@ final class WindowServer {
 final class OverlayPanel: NSPanel {
     override var canBecomeKey: Bool { false }
     override var canBecomeMain: Bool { false }
+    /// AppKit would pull a panel down to fit `visibleFrame`, which on a secondary display leaves the
+    /// menu-bar strip unmasked and shifts every mask rectangle. The overlay covers the whole display.
+    override func constrainFrameRect(_ frameRect: NSRect, to screen: NSScreen?) -> NSRect { frameRect }
     init(frame: CGRect) {
         super.init(contentRect: frame, styleMask: [.borderless, .nonactivatingPanel], backing: .buffered, defer: false)
         title = "Vidrado Effect"
