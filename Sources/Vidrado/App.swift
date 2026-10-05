@@ -131,7 +131,7 @@ import VidradoCore
     }
     @objc private func closeSettings() { settingsWindow?.close() }
     @objc private func about() {
-        NSApp.orderFrontStandardAboutPanel(options: [.applicationName: "Vidrado", .applicationVersion: "1.0.0", .credits: NSAttributedString(string: L10n.text("Native focus for macOS. No subscription, tracking or screen capture."))])
+        NSApp.orderFrontStandardAboutPanel(options: [.applicationName: "Vidrado", .applicationVersion: Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.1", .credits: NSAttributedString(string: L10n.text("Native focus for macOS. No subscription, tracking or screen capture."))])
         NSApp.activate(ignoringOtherApps: true)
     }
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool { showSettings(); return true }

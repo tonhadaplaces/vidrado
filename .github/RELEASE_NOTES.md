@@ -1,5 +1,6 @@
 Native macOS focus with blur, dimming, app rules, grayscale app icons, and 13 interface languages.
 
+- Fixes the focus mask on multi-display setups. The mask is now clipped in the WindowServer's global coordinate space, so it covers the full height of every connected screen instead of stopping at the built-in display's height.
 - Requires macOS 14 or later.
 - The DMG contains a universal app for Apple silicon and Intel.
 - The app is ad hoc signed and is not notarized by Apple.
