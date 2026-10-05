@@ -38,7 +38,8 @@ jobs:
         run: ./scripts/package.sh
       - name: Verify architectures and checksum
         run: |
-          lipo -verify_arch arm64 x86_64 dist/Vidrado.app/Contents/MacOS/Vidrado
+          lipo dist/Vidrado.app/Contents/MacOS/Vidrado -verify_arch arm64
+          lipo dist/Vidrado.app/Contents/MacOS/Vidrado -verify_arch x86_64
           cd dist
           shasum -a 256 -c Vidrado.dmg.sha256
       - name: Preserve release artifacts
