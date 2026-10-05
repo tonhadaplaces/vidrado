@@ -67,7 +67,7 @@ swift test
 
 ## 자동 릴리스
 
-리뷰를 마친 변경 사항이 `main`에 병합되면 `Resources/Info.plist`의 `CFBundleShortVersionString`과 `CFBundleVersion`을 새 버전으로 업데이트하고, 이에 맞는 태그를 푸시하세요.
+버전 변경 사항(`Resources/Info.plist`의 `CFBundleShortVersionString`과 `CFBundleVersion`)을 풀 리퀘스트에 포함하세요. 승인 후 `main`에 병합되면 해당 커밋에 태그를 지정하세요.
 
 ```sh
 git switch main

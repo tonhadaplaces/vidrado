@@ -67,7 +67,7 @@ Lisez les [Consignes du dépôt](../../../AGENTS.md) et les [Notes de validation
 
 ## Releases automatiques
 
-Une fois les modifications revues et fusionnées dans `main`, mettez à jour `CFBundleShortVersionString` et `CFBundleVersion` dans `Resources/Info.plist` pour la nouvelle version, puis poussez un tag correspondant :
+Incluez les changements de version (`CFBundleShortVersionString` et `CFBundleVersion` dans `Resources/Info.plist`) dans une pull request. Après son approbation et sa fusion dans `main`, créez un tag sur ce commit :
 
 ```sh
 git switch main

@@ -67,7 +67,7 @@ Baca [Panduan Repositori](../../../AGENTS.md) dan [Catatan validasi](../../../TE
 
 ## Rilis otomatis
 
-Setelah perubahan yang telah ditinjau digabungkan ke `main`, perbarui `CFBundleShortVersionString` dan `CFBundleVersion` di `Resources/Info.plist` untuk versi baru, lalu push tag yang sesuai:
+Sertakan perubahan versi (`CFBundleShortVersionString` dan `CFBundleVersion` di `Resources/Info.plist`) dalam pull request. Setelah disetujui dan digabungkan ke `main`, beri tag pada commit tersebut:
 
 ```sh
 git switch main

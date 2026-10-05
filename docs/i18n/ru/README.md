@@ -67,7 +67,7 @@ swift test
 
 ## Автоматические релизы
 
-После слияния проверенных изменений в `main` обновите `CFBundleShortVersionString` и `CFBundleVersion` в `Resources/Info.plist` для новой версии, затем отправьте соответствующий тег:
+Включите изменения версии (`CFBundleShortVersionString` и `CFBundleVersion` в `Resources/Info.plist`) в pull request. После одобрения и слияния в `main` создайте тег для этого коммита:
 
 ```sh
 git switch main

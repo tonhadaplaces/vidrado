@@ -67,7 +67,7 @@ swift test
 
 ## স্বয়ংক্রিয় রিলিজ
 
-পর্যালোচিত পরিবর্তনগুলো `main`-এ মার্জ হওয়ার পর, নতুন সংস্করণের জন্য `Resources/Info.plist`-এ `CFBundleShortVersionString` ও `CFBundleVersion` আপডেট করুন, তারপর মিলযুক্ত একটি ট্যাগ পুশ করুন:
+সংস্করণের পরিবর্তনগুলো (`Resources/Info.plist`-এ `CFBundleShortVersionString` ও `CFBundleVersion`) একটি পুল রিকোয়েস্টে অন্তর্ভুক্ত করুন। অনুমোদন ও `main`-এ মার্জের পর, সেই কমিটে ট্যাগ দিন:
 
 ```sh
 git switch main

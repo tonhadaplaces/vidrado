@@ -67,7 +67,7 @@ swift test
 
 ## स्वचालित रिलीज़
 
-समीक्षा किए गए बदलाव `main` में मर्ज होने के बाद, नए संस्करण के लिए `Resources/Info.plist` में `CFBundleShortVersionString` और `CFBundleVersion` अपडेट करें, फिर उससे मेल खाता टैग पुश करें:
+संस्करण के बदलाव (`Resources/Info.plist` में `CFBundleShortVersionString` और `CFBundleVersion`) पुल अनुरोध में शामिल करें। स्वीकृति मिलने और `main` में मर्ज होने के बाद, उस कमिट को टैग करें:
 
 ```sh
 git switch main

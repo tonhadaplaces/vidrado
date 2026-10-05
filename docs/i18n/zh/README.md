@@ -67,7 +67,7 @@ swift test
 
 ## 自动发布
 
-经过审查的更改合并到 `main` 后，在 `Resources/Info.plist` 中将 `CFBundleShortVersionString` 和 `CFBundleVersion` 更新为新版本，然后推送与之匹配的标签：
+请将版本更改（`Resources/Info.plist` 中的 `CFBundleShortVersionString` 和 `CFBundleVersion`）纳入拉取请求。获得批准并合并到 `main` 后，为该提交打标签：
 
 ```sh
 git switch main

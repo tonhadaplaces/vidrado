@@ -67,7 +67,7 @@ Read [Repository Guidelines](AGENTS.md) and [Validation notes](TESTING.md) befor
 
 ## Automatic releases
 
-After the reviewed changes are merged into `main`, update `CFBundleShortVersionString` and `CFBundleVersion` in `Resources/Info.plist` for the new version, then push a matching tag:
+Include the version changes (`CFBundleShortVersionString` and `CFBundleVersion` in `Resources/Info.plist`) in a pull request. After approval and merge into `main`, tag that commit:
 
 ```sh
 git switch main

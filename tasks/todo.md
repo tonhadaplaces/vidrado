@@ -6,7 +6,7 @@
 - [ ] Capture screenshots on a new macOS desktop.
 
 ## Wave 2: validation
-- [ ] Run core and native checks and validate the distribution.
+- [x] Run core and native checks and validate the distribution.
 - [x] Check documentation links, translations, assets, and committed files.
 - [ ] Independently review the committed release configuration.
 
@@ -16,4 +16,4 @@
 - [ ] Verify repository settings and leave the validated distribution artifacts ready for launch.
 
 ## Review
-13 core tests passed. Universal build, signature, DMG, checksum, localization catalogs, workflow lint, and documentation links passed. Native checks passed 23/24 in debug and release; compositor ordering remains pending. Three app screenshots are saved; Mission Control was unavailable for creating a new desktop. Independent configuration review and GitHub setup are pending.
+13 core tests and all 24 native checks passed in both debug and release. Universal build, signature, DMG, checksum, localization catalogs, workflow lint, and documentation links passed. Three app screenshots are saved; Mission Control was unavailable for creating a new desktop. Independent review identified the version-bump documentation issue; it was corrected in all 13 READMEs. GitHub CI passed on the preparation branch. Final independent review and main protection are pending.

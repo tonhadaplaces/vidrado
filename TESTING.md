@@ -6,7 +6,9 @@ Ambiente: macOS 27.0 (26A428), Apple silicon, Swift 6.4, uma tela Retina de 1512
 
 Na repetição atual, os 13 testes XCTest passaram. O build universal contém arm64 e x86_64, com versão mínima macOS 14.0 em ambas as arquiteturas; assinatura ad hoc, DMG e checksum foram verificados. `actionlint` validou os workflows de CI e release; os 13 catálogos passaram em `plutil`.
 
-As verificações nativas em debug e release passaram em 23 de 24 casos. A verificação da ordem do compositor falhou: o painel estava marcado como visível no AppKit, mas não apareceu na lista de janelas na tela. Essa verificação permanece pendente; não foi tratada como aprovação. A comparação do texto de pausa foi corrigida para usar a tradução do idioma atual.
+O script completo `./scripts/test.sh` passou: 13 testes XCTest e 24 verificações nativas em cada configuração, debug e release. A verificação da ordem usa um painel com desfoque e escurecimento para garantir sua presença nos metadados do compositor; um painel apenas com desfoque e fundo quase transparente havia sido omitido dessa lista na execução anterior. A comparação do texto de pausa usa a tradução do idioma atual. Log local: `dist/release-full-tests.log`.
+
+A execução normal do app empacotado também foi inspecionada: sua sobreposição aparece atrás da janela ativa na lista do compositor.
 
 Três prints reais das telas foram capturados. A automação não conseguiu acessar o Mission Control para criar uma nova área de trabalho; uma captura geral em um desktop novo permanece pendente.
 

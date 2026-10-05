@@ -67,7 +67,7 @@ swift test
 
 ## خودکار ریلیز
 
-جائزہ شدہ تبدیلیاں `main` میں ضم ہونے کے بعد، نئے ورژن کے لیے `Resources/Info.plist` میں `CFBundleShortVersionString` اور `CFBundleVersion` اپ ڈیٹ کریں، پھر اس سے مطابقت رکھنے والا ٹیگ پُش کریں:
+ورژن کی تبدیلیاں (`Resources/Info.plist` میں `CFBundleShortVersionString` اور `CFBundleVersion`) پُل ریکویسٹ میں شامل کریں۔ منظوری اور `main` میں ضم ہونے کے بعد، اس کمٹ کو ٹیگ کریں:
 
 ```sh
 git switch main

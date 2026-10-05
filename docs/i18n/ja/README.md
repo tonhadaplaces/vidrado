@@ -67,7 +67,7 @@ swift test
 
 ## 自動リリース
 
-レビュー済みの変更を `main` にマージした後、`Resources/Info.plist` の `CFBundleShortVersionString` と `CFBundleVersion` を新しいバージョンに更新し、対応するタグをプッシュしてください。
+バージョンの変更（`Resources/Info.plist` の `CFBundleShortVersionString` と `CFBundleVersion`）をプルリクエストに含めてください。承認されて `main` にマージされた後、そのコミットにタグを付けてください。
 
 ```sh
 git switch main

@@ -67,7 +67,7 @@ Leia as [Diretrizes do repositório](../../../AGENTS.md) e as [Notas de validaç
 
 ## Releases automáticos
 
-Depois que as alterações revisadas forem integradas à `main`, atualize `CFBundleShortVersionString` e `CFBundleVersion` em `Resources/Info.plist` para a nova versão e envie uma tag correspondente:
+Inclua as alterações de versão (`CFBundleShortVersionString` e `CFBundleVersion` em `Resources/Info.plist`) em um pull request. Após a aprovação e o merge na `main`, crie uma tag nesse commit:
 
 ```sh
 git switch main

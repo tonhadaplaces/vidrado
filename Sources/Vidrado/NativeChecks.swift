@@ -64,6 +64,8 @@ enum NativeChecks {
             return false
         }
         let liveStore = SettingsStore(defaults: defaults)
+        // Use dimming so the compositor lists the live ordering fixture.
+        liveStore.preferences.mode = .both
         liveStore.preferences.pauseScreenSharing = false
         liveStore.preferences.pauseFullscreen = false
         let engine = FocusEngine(store: liveStore)

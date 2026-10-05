@@ -67,7 +67,7 @@ swift test
 
 ## الإصدارات التلقائية
 
-بعد دمج التغييرات التي خضعت للمراجعة في `main`، حدّث `CFBundleShortVersionString` و`CFBundleVersion` في `Resources/Info.plist` للإصدار الجديد، ثم ادفع وسمًا مطابقًا:
+أدرج تغييرات الإصدار (`CFBundleShortVersionString` و`CFBundleVersion` في `Resources/Info.plist`) في طلب سحب. بعد الموافقة والدمج في `main`، أضف وسمًا إلى ذلك الالتزام:
 
 ```sh
 git switch main
