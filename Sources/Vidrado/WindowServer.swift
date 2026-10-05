@@ -58,6 +58,7 @@ final class WindowServer {
         guard let blur else { return radius == 0 }
         return blur(connection, UInt32(window.windowNumber), Int32(radius)) == 0
     }
+    /// Rectangles use global WindowServer coordinates, which is the space `CGSSetWindowShape` applies the region in.
     func setShape(window: NSWindow, rectangles: [CGRect]) -> Bool {
         guard let newRegion, let releaseRegion, let shape, !rectangles.isEmpty else { return false }
         var region: UnsafeMutableRawPointer?

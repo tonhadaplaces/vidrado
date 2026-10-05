@@ -23,6 +23,17 @@ final class FocusTests: XCTestCase {
         XCTAssertEqual(FocusGeometry.subtract(display.insetBy(dx: -50, dy: -50), from: display), [])
         XCTAssertEqual(area(FocusGeometry.subtract(CGRect(x: -100, y: -100, width: 200, height: 200), from: display)), area([display]) - 10_000)
     }
+    func testShapeRegionsStayInGlobalSpaceOnSecondaryDisplays() {
+        let builtIn = CGRect(x: 0, y: 0, width: 1440, height: 900)
+        let ultrawide = CGRect(x: 1440, y: -300, width: 2560, height: 1200)
+        XCTAssertEqual(FocusGeometry.shapeRegion(holes: [], display: builtIn), [builtIn])
+        XCTAssertEqual(FocusGeometry.shapeRegion(holes: [], display: ultrawide), [ultrawide])
+        let hole = CGRect(x: 1600, y: 0, width: 800, height: 600)
+        let regions = FocusGeometry.shapeRegion(holes: [hole], display: ultrawide)
+        XCTAssertTrue(regions.allSatisfy { ultrawide.contains($0) })
+        XCTAssertEqual(area(regions) + area([ultrawide.intersection(hole)]), area([ultrawide]), accuracy: 0.001)
+        XCTAssertEqual(regions.reduce(CGRect.null) { $0.union($1) }.height, ultrawide.height)
+    }
     func testMultipleMonitorCoordinatesIncludingAboveAndLeft() {
         let monitors = [CGRect(x: 0, y: 0, width: 1440, height: 900), CGRect(x: -1920, y: 0, width: 1920, height: 1080), CGRect(x: 0, y: -1200, width: 1920, height: 1200)]
         for rect in monitors {
