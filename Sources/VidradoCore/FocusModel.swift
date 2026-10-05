@@ -87,6 +87,9 @@ public enum FocusGeometry {
     public static func subtract(_ holes: [CGRect], from rect: CGRect) -> [CGRect] {
         holes.reduce([rect]) { pieces, hole in pieces.flatMap { subtract(hole, from: $0) } }
     }
+    /// CGS window shapes are applied in the global WindowServer space, not relative to the window,
+    /// so a secondary display keeps its own origin instead of being rebased onto the panel.
+    public static func shapeRegion(holes: [CGRect], display: CGRect) -> [CGRect] { subtract(holes, from: display) }
     public static func appKitFrame(_ rect: CGRect, primaryHeight: CGFloat) -> CGRect {
         CGRect(x: rect.minX, y: primaryHeight - rect.maxY, width: rect.width, height: rect.height)
     }

@@ -58,6 +58,7 @@ final class WindowServer {
         guard let blur else { return radius == 0 }
         return blur(connection, UInt32(window.windowNumber), Int32(radius)) == 0
     }
+    /// Rectangles use global WindowServer coordinates, which is the space `CGSSetWindowShape` applies the region in.
     func setShape(window: NSWindow, rectangles: [CGRect]) -> Bool {
         guard let newRegion, let releaseRegion, let shape, !rectangles.isEmpty else { return false }
         var region: UnsafeMutableRawPointer?
@@ -88,6 +89,9 @@ final class WindowServer {
 final class OverlayPanel: NSPanel {
     override var canBecomeKey: Bool { false }
     override var canBecomeMain: Bool { false }
+    /// AppKit would pull a panel down to fit `visibleFrame`, which on a secondary display leaves the
+    /// menu-bar strip unmasked and shifts every mask rectangle. The overlay covers the whole display.
+    override func constrainFrameRect(_ frameRect: NSRect, to screen: NSScreen?) -> NSRect { frameRect }
     init(frame: CGRect) {
         super.init(contentRect: frame, styleMask: [.borderless, .nonactivatingPanel], backing: .buffered, defer: false)
         title = "Vidrado Effect"

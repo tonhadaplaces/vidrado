@@ -57,7 +57,9 @@ import ServiceManagement
     @Published private(set) var warning: String?
     let server = WindowServer()
     private let store: SettingsStore
-    private var panels: [CGDirectDisplayID: OverlayPanel] = [:]
+    private var panels: [OverlayPanel] = []
+    private var coveredDisplays = 0
+    private var orderedBelow: UInt32 = 0
     private var timer: Timer?
     private var observers: [NSObjectProtocol] = []
     private var workspaceObservers: [NSObjectProtocol] = []
@@ -68,7 +70,9 @@ import ServiceManagement
     private var lastSharingCheck: TimeInterval = 0
     private var shared = false
     private var fullscreenIDs: Set<UInt32> = []
-    var visiblePanelCount: Int { panels.values.filter(\.isVisible).count }
+    var visiblePanelCount: Int { panels.filter(\.isVisible).count }
+    /// Distinct displays currently receiving a mask, not the number of panels.
+    var coveredDisplayCount: Int { coveredDisplays }
 
     init(store: SettingsStore) { self.store = store }
     func start() {
@@ -93,8 +97,10 @@ import ServiceManagement
         }
         observers.append(NotificationCenter.default.addObserver(forName: NSApplication.didChangeScreenParametersNotification, object: nil, queue: .main) { [weak self] _ in
             MainActor.assumeIsolated {
-                self?.panels.values.forEach { $0.close() }
+                self?.panels.forEach { $0.close() }
                 self?.panels.removeAll()
+                self?.coveredDisplays = 0
+                self?.orderedBelow = 0
                 self?.lastRender = ""
                 self?.refresh()
             }
@@ -112,10 +118,12 @@ import ServiceManagement
         observers.forEach(NotificationCenter.default.removeObserver)
         workspaceObservers.forEach(NSWorkspace.shared.notificationCenter.removeObserver)
         observers = []; workspaceObservers = []
-        panels.values.forEach { $0.close() }; panels = [:]
+        panels.forEach { $0.close() }; panels = []; coveredDisplays = 0; orderedBelow = 0
     }
     private func hide() {
-        panels.values.filter(\.isVisible).forEach { $0.orderOut(nil) }
+        panels.filter(\.isVisible).forEach { $0.orderOut(nil) }
+        coveredDisplays = 0
+        orderedBelow = 0
         lastRender = ""
         if isApplying { isApplying = false }
     }
@@ -136,7 +144,7 @@ import ServiceManagement
             lastSharingCheck = now
         }
         let windows = WindowServer.windows().filter { window in
-            !panels.values.contains(where: { UInt32($0.windowNumber) == window.id })
+            !panels.contains { UInt32($0.windowNumber) == window.id }
         }
         let front = NSWorkspace.shared.frontmostApplication
         // Full-screen apps can expose a separate, narrow toolbar window before their document.
@@ -162,22 +170,35 @@ import ServiceManagement
         guard signature != lastRender else { return }
         lastRender = signature
         var failed = false
-        for (index, screen) in screens.enumerated() {
-            let id = screen.deviceDescription[NSDeviceDescriptionKey("NSScreenNumber")] as? UInt32 ?? UInt32(index)
-            if !p.allDisplays && index != focusedScreenIndex { panels[id]?.orderOut(nil); continue }
-            let panel = panels[id] ?? OverlayPanel(frame: screen.frame)
-            panels[id] = panel
-            if panel.frame != screen.frame { panel.setFrame(screen.frame, display: true) }
-            let remainder = FocusGeometry.subtract(holes, from: displayRects[index])
-            if remainder.isEmpty { panel.orderOut(nil); continue }
-            let local = remainder.map { $0.offsetBy(dx: -displayRects[index].minX, dy: -displayRects[index].minY) }
-            panel.backgroundColor = NSColor.black.withAlphaComponent(max(0.001, p.dimOpacity))
-            panel.order(.below, relativeTo: Int(active.id))
-            let blurOK = server.setBlur(window: panel, radius: p.blurRadius)
-            let shapeOK = server.setShape(window: panel, rectangles: local)
-            if !shapeOK && !holes.isEmpty { panel.orderOut(nil) }
-            failed = failed || !blurOK || !shapeOK
+        // One panel per masked rectangle, sized to exactly that rectangle. Background blur is a
+        // window-level property that CGSSetWindowShape does not clip, so a single full-display panel
+        // keeps blurring pinned windows even though the clip region excludes them. Covering only the
+        // masked rectangles keeps pinned windows genuinely untouched.
+        var pieces: [CGRect] = []
+        var covered = 0
+        for index in screens.indices {
+            guard p.allDisplays || index == focusedScreenIndex else { continue }
+            let region = FocusGeometry.shapeRegion(holes: holes, display: displayRects[index])
+            guard !region.isEmpty else { continue }
+            covered += 1
+            pieces += region.map { FocusGeometry.appKitFrame($0, primaryHeight: primaryHeight) }
         }
+        coveredDisplays = covered
+        // Panels must sit directly below the active window, so re-order them whenever the active
+        // window changes, not only when a rectangle changes. Re-ordering an unchanged panel is what
+        // makes the compositor rebuild it, so it is done as rarely as correctness allows.
+        let reorder = orderedBelow != active.id
+        orderedBelow = active.id
+        for (index, rect) in pieces.enumerated() {
+            let panel: OverlayPanel
+            if index < panels.count { panel = panels[index] }
+            else { panel = OverlayPanel(frame: rect); panels.append(panel) }
+            if panel.frame != rect { panel.setFrame(rect, display: false) }
+            if reorder || !panel.isVisible { panel.order(.below, relativeTo: Int(active.id)) }
+            panel.backgroundColor = NSColor.black.withAlphaComponent(max(0.001, p.dimOpacity))
+            failed = failed || !server.setBlur(window: panel, radius: p.blurRadius)
+        }
+        for extra in panels.dropFirst(pieces.count) { extra.orderOut(nil) }
         let nextWarning = failed ? L10n.text("macOS could not apply the full effect. Pause focus or try Dim.") : nil
         if warning != nextWarning { warning = nextWarning }
         if !isApplying { isApplying = true }

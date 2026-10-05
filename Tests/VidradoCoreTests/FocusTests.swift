@@ -23,6 +23,58 @@ final class FocusTests: XCTestCase {
         XCTAssertEqual(FocusGeometry.subtract(display.insetBy(dx: -50, dy: -50), from: display), [])
         XCTAssertEqual(area(FocusGeometry.subtract(CGRect(x: -100, y: -100, width: 200, height: 200), from: display)), area([display]) - 10_000)
     }
+    func testShapeRegionsStayInGlobalSpaceOnSecondaryDisplays() {
+        let builtIn = CGRect(x: 0, y: 0, width: 1440, height: 900)
+        let ultrawide = CGRect(x: 1440, y: -300, width: 2560, height: 1200)
+        XCTAssertEqual(FocusGeometry.shapeRegion(holes: [], display: builtIn), [builtIn])
+        XCTAssertEqual(FocusGeometry.shapeRegion(holes: [], display: ultrawide), [ultrawide])
+        let hole = CGRect(x: 1600, y: 0, width: 800, height: 600)
+        let regions = FocusGeometry.shapeRegion(holes: [hole], display: ultrawide)
+        XCTAssertTrue(regions.allSatisfy { ultrawide.contains($0) })
+        XCTAssertEqual(area(regions) + area([ultrawide.intersection(hole)]), area([ultrawide]), accuracy: 0.001)
+        XCTAssertEqual(regions.reduce(CGRect.null) { $0.union($1) }.height, ultrawide.height)
+    }
+    func testMaskPanelsCoverPinnedWindowsOnTallerSecondaryDisplays() {
+        // Real layout: built-in 1512x982 primary, LG 5120x1440 secondary whose top sits 458pt higher.
+        let builtIn = CGRect(x: 0, y: 0, width: 1440, height: 900)
+        let ultrawide = CGRect(x: 1440, y: -300, width: 2560, height: 1200)
+        let aside = CGRect(x: 1440, y: -270, width: 850, height: 1170)
+        let holes = [aside]
+        for display in [builtIn, ultrawide] {
+            let pieces = FocusGeometry.shapeRegion(holes: holes, display: display)
+            XCTAssertFalse(pieces.isEmpty)
+            let covered = pieces.reduce(0.0) { acc, r in
+                let x = r.intersection(aside); return acc + (x.isNull ? 0 : x.width * x.height)
+            }
+            XCTAssertEqual(covered, 0, accuracy: 0.001, "mask must not touch a pinned window on \(display)")
+            // Each piece becomes a panel frame via appKitFrame, so converting twice must be stable.
+            for piece in pieces {
+                XCTAssertEqual(FocusGeometry.appKitFrame(FocusGeometry.appKitFrame(piece, primaryHeight: builtIn.height), primaryHeight: builtIn.height), piece)
+                XCTAssertTrue(display.contains(piece))
+            }
+        }
+    }
+    /// Panels are sized to these rectangles, so they must tile the display exactly: no overlap
+    /// (which would double-blur) and no gap (which would leave an unmasked strip).
+    func testMaskPiecesTileTheDisplayWithoutOverlapOrGaps() {
+        let builtIn = CGRect(x: 0, y: 0, width: 1440, height: 900)
+        let ultrawide = CGRect(x: 1440, y: -300, width: 2560, height: 1200)
+        // Windows sit 30pt below the ultrawide's top edge, leaving the menu-bar strip above them.
+        let pinned = [CGRect(x: 1440, y: -270, width: 850, height: 1170), CGRect(x: 2290, y: -270, width: 1710, height: 1170)]
+        for display in [builtIn, ultrawide] {
+            let pieces = FocusGeometry.shapeRegion(holes: pinned, display: display)
+            let holesInside = pinned.compactMap { $0.intersection(display) }.filter { !$0.isNull }
+            XCTAssertEqual(area(pieces) + area(holesInside), area([display]), accuracy: 0.001)
+            for (i, a) in pieces.enumerated() {
+                XCTAssertTrue(display.contains(a))
+                for b in pieces.dropFirst(i + 1) { XCTAssertTrue(a.intersection(b).isEmpty, "pieces must not overlap") }
+            }
+            // The union plus the holes inside the display must reconstruct it exactly.
+            let holesUnion = holesInside.reduce(CGRect.null) { $0.union($1) }
+            XCTAssertEqual(pieces.reduce(CGRect.null) { $0.union($1) }.union(holesUnion), display)
+        }
+        XCTAssertEqual(FocusGeometry.shapeRegion(holes: [ultrawide], display: ultrawide), [])
+    }
     func testMultipleMonitorCoordinatesIncludingAboveAndLeft() {
         let monitors = [CGRect(x: 0, y: 0, width: 1440, height: 900), CGRect(x: -1920, y: 0, width: 1920, height: 1080), CGRect(x: 0, y: -1200, width: 1920, height: 1200)]
         for rect in monitors {

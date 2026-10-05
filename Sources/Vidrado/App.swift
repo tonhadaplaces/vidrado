@@ -63,7 +63,7 @@ import VidradoCore
         statusItem.button?.action = #selector(togglePopover)
         statusItem.button?.sendAction(on: [.leftMouseUp, .rightMouseUp])
         popover.behavior = .transient
-        popover.contentViewController = NSHostingController(rootView: MenuView(store: store, engine: engine) { [weak self] in self?.showSettings() })
+        popover.contentViewController = NSHostingController(rootView: MenuView(store: store, engine: engine) { [weak self] in self?.showSettings() } quit: { [weak self] in self?.quit() })
         hotKey.action = { [weak self] in self?.store.preferences.enabled.toggle() }
         subscription = store.$preferences.receive(on: RunLoop.main).sink { [weak self] preferences in
             guard let self else { return }
@@ -111,6 +111,7 @@ import VidradoCore
         else if let button = statusItem.button { popover.show(relativeTo: button.bounds, of: button, preferredEdge: .minY) }
     }
     @objc private func toggleFocus() { store.preferences.enabled.toggle() }
+    @objc func quit() { popover.performClose(nil); NSApp.terminate(nil) }
     @objc func showSettings() {
         popover.performClose(nil)
         if settingsWindow == nil {
@@ -121,7 +122,7 @@ import VidradoCore
             window.isMovableByWindowBackground = false
             window.hasShadow = true
             window.isReleasedWhenClosed = false
-            window.contentView = NSHostingView(rootView: SettingsView(store: store, engine: engine))
+            window.contentView = NSHostingView(rootView: SettingsView(store: store, engine: engine) { [weak self] in self?.quit() })
             window.center()
             window.setFrameAutosaveName("VidradoDesignSettings")
             settingsWindow = window
@@ -131,7 +132,7 @@ import VidradoCore
     }
     @objc private func closeSettings() { settingsWindow?.close() }
     @objc private func about() {
-        NSApp.orderFrontStandardAboutPanel(options: [.applicationName: "Vidrado", .applicationVersion: "1.0.0", .credits: NSAttributedString(string: L10n.text("Native focus for macOS. No subscription, tracking or screen capture."))])
+        NSApp.orderFrontStandardAboutPanel(options: [.applicationName: "Vidrado", .applicationVersion: Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.1", .credits: NSAttributedString(string: L10n.text("Native focus for macOS. No subscription, tracking or screen capture."))])
         NSApp.activate(ignoringOtherApps: true)
     }
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool { showSettings(); return true }
