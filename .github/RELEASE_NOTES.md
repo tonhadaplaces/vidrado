@@ -4,6 +4,7 @@ Native macOS focus with blur, dimming, app rules, grayscale app icons, and 13 in
 - Apps set to "Keep clear" now actually stay sharp. Background blur is a window-level property that the clip region does not restrict, so the mask is now built from one overlay per masked rectangle instead of one clipped overlay per display.
 - Fixes mask panels being pulled down by the menu bar on a secondary display, which left an unmasked strip along the top edge.
 - Fixes apps losing the effect after switching windows, and mask flicker from reordering unchanged overlays.
+- Adds a Quit control to the focus menu. Vidrado has no Dock icon and no visible menu bar, so the app menu was unreachable and quitting meant remembering the keyboard shortcut.
 - Requires macOS 14 or later.
 - The DMG contains a universal app for Apple silicon and Intel.
 - The app is ad hoc signed and is not notarized by Apple.

@@ -176,6 +176,7 @@ struct FocusHome: View {
     @ObservedObject var engine: FocusEngine
     let openApps: () -> Void
     let openSettings: () -> Void
+    let quit: () -> Void
     var body: some View {
         VStack(spacing: 24) {
             HStack(spacing: 10) {
@@ -216,6 +217,19 @@ struct FocusHome: View {
                 Spacer(minLength: 8)
                 CopyText(text: tr("On-device. Always."), size: 10, color: secondary)
             }.frame(minHeight: 12)
+            // The app has no Dock icon and no visible menu bar, so its app menu is unreachable.
+            // Without a visible control here the only way out is remembering the shortcut. Styled as
+            // a plain row like "Keep some apps clear", not a filled button, so it stays secondary to
+            // "Pause focus" while still being obvious.
+            Button(action: quit) {
+                HStack(spacing: 10) {
+                    Image(systemName: "power").font(inter(15)).foregroundStyle(secondary)
+                    CopyText(text: tr("Quit Vidrado"), size: 12, color: ink)
+                    Spacer(minLength: 8)
+                }.frame(maxWidth: .infinity).frame(minHeight: 15).padding(.vertical, 13)
+            }.buttonStyle(.plain)
+                .overlay(alignment: .top) { Rectangle().fill(tone(0xEAEAEA, 0x404040)).frame(height: 1) }
+                .accessibilityLabel(tr("Quit Vidrado"))
         }
     }
     private func level(_ title: String, icon: String, value: Double) -> some View {
@@ -267,6 +281,7 @@ struct MenuView: View {
     @ObservedObject var store: SettingsStore
     @ObservedObject var engine: FocusEngine
     let openSettings: () -> Void
+    let quit: () -> Void
     @State private var apps = false
     var body: some View {
         DesignScreen {
@@ -274,7 +289,7 @@ struct MenuView: View {
                 BackNavigation { apps = false }
                 AppRulesView(store: store)
             } else {
-                FocusHome(store: store, engine: engine, openApps: { apps = true }, openSettings: openSettings)
+                FocusHome(store: store, engine: engine, openApps: { apps = true }, openSettings: openSettings, quit: quit)
             }
             if let warning = engine.warning { CopyText(text: warning, size: 11, color: .orange) }
         }
@@ -389,6 +404,7 @@ struct AppRulesView: View {
 struct SettingsView: View {
     @ObservedObject var store: SettingsStore
     @ObservedObject var engine: FocusEngine
+    let quit: () -> Void
     @State private var page = 2
     @State private var pauseOptions = false
     @State private var moreOptions = false
@@ -402,7 +418,7 @@ struct SettingsView: View {
             switch page {
             case 1: AppRulesView(store: store)
             case 2: preferencesPage
-            default: FocusHome(store: store, engine: engine, openApps: { page = 1 }, openSettings: { page = 2 })
+            default: FocusHome(store: store, engine: engine, openApps: { page = 1 }, openSettings: { page = 2 }, quit: quit)
             }
             if let warning = engine.warning { CopyText(text: warning, size: 11, color: .orange) }
             if let message = store.message {
