@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vidrado — Less noise. More clarity.</title>
+  <meta name="description" content="Vidrado is a native macOS menu bar app that blurs and dims background windows while keeping your active window clear. No account, no subscription, 100% on-device.">
+  <meta name="theme-color" content="#FAFAF8">
+  <meta property="og:title" content="Vidrado — Less noise. More clarity.">
+  <meta property="og:description" content="Blur the distractions. Keep what matters clear. A quiet menu bar app for macOS 14+.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tonhadaplaces.github.io/vidrado/">
+  <meta property="og:image" content="https://tonhadaplaces.github.io/vidrado/assets/mark.png">
+  <link rel="icon" type="image/png" href="assets/mark.png">
+  <link rel="apple-touch-icon" href="assets/mark.png">
+  <link rel="preload" href="assets/fonts/Inter.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="assets/site.css">
+  <!--
+    Vidrado promotional site. Content and layout follow design.pen frame
+    "04 · Promotional website / Desktop" (node vetvK).
+    Type: Inter (SIL Open Font License 1.1). Icons: Lucide (ISC License).
+  -->
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="wrap nav-in">
+      <a class="brand" href="#top" aria-label="Vidrado home">
+        <svg class="mark" viewBox="0 0 96 96" fill="currentColor" aria-hidden="true"><g transform="translate(12 25.49845)"><path d="M37.80924 0l-32.5477 0c-2.97231 0-5.26154 2.30769-5.26154 5.26154l0 25.84616c0 2.99077 2.28923 5.18769 5.26154 5.18769l31.93846 0c2.99076 0 5.07692-2.19692 5.07692-5.18769l0-26.93539c0-2.41846-1.84615-4.17231-4.46769-4.17231z m-0.68309 31.1077c0 0.09231-0.05538 0.12923-0.12923 0.12923l-31.88307 0c-0.12923 0-0.20308-0.05539-0.20308-0.12923l0-25.69847c0-0.09231 0.11077-0.14769 0.35077-0.14769l31.66154 0c0.12923 0 0.20307 0.05539 0.20307 0.14769l0 25.69847z"/></g><g transform="translate(33.8769 16)"><path d="M29.55693 0l-27.56308 0c-1.31077 0-1.99385 0.75692-1.99385 1.82769 0 1.10769 0.86769 1.86461 2.0677 1.86461l27.08307 0c0.25846 0 0.3877 0.09231 0.38769 0.29539l0 23.74154c0 1.45847 0.83077 2.12308 1.86462 2.12308 1.05231 0 1.82769-0.79384 1.82769-2.10462l0-24.07384c0-2.16-1.60616-3.67385-3.67384-3.67385z"/></g></svg>
+        <span class="wordmark">vidrado</span>
+      </a>
+      <nav class="nav-links" aria-label="Site">
+        <a href="#how">How it works</a>
+        <a href="#mac">Made for Mac</a>
+        <a href="https://github.com/tonhadaplaces/vidrado" rel="noopener">GitHub&nbsp;↗</a>
+      </nav>
+      <a class="btn btn-nav" href="https://github.com/tonhadaplaces/vidrado/releases">Download for macOS</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero wrap" id="top">
+      <p class="badge rv"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3" /></svg><span>A little quiet for your Mac</span></p>
+      <h1 class="rv" data-d="1">Less noise.<br>More clarity.</h1>
+      <p class="lede rv" data-d="2">Blur the distractions. Keep what matters clear.<br>Vidrado gives your active window your full attention.</p>
+      <div class="rv" data-d="3">
+        <a class="btn btn-big" href="https://github.com/tonhadaplaces/vidrado/releases"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 17V3" /><path d="m6 11 6 6 6-6" /><path d="M19 21H5" /></svg><span>Download for macOS</span></a>
+      </div>
+      <p class="req rv" data-d="4">macOS 14+&nbsp;&nbsp;·&nbsp;&nbsp;No account. No subscription.</p>
+    </section>
+
+    <!-- Interactive blur demo -->
+    <section class="demo wrap" id="demo" aria-label="Live demonstration">
+      <div class="stage rv">
+        <div class="desktop" id="desktop">
+          <div class="menubar" aria-hidden="true">
+            <span class="mb-left"><span class="appledot"></span>Notes&nbsp;&nbsp;&nbsp;File&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;View</span>
+            <span class="mb-right">◧&nbsp;&nbsp;&nbsp;◉&nbsp;&nbsp;&nbsp;Wi-Fi&nbsp;&nbsp;&nbsp;100%&nbsp;&nbsp;&nbsp;<time id="clock">Mon. 09:41</time></span>
+          </div>
+
+          <div class="win win-browser" data-app="Safari" role="button" tabindex="0" aria-pressed="false" aria-label="Bring Safari to focus">
+            <div class="win-bar"><span class="tl"><i></i><i></i><i></i></span><span class="win-title">design — references</span></div>
+            <div class="win-body">
+              <div class="bar b1"></div>
+              <div class="bar b2"></div>
+              <div class="bar b3"></div>
+              <div class="bar b4"></div>
+              <div class="bar b5"></div>
+            </div>
+          </div>
+
+          <div class="win win-messages" data-app="Messages" role="button" tabindex="0" aria-pressed="false" aria-label="Bring Messages to focus">
+            <div class="win-body chat">
+              <p class="chat-title">Conversations</p>
+              <p class="bubble">What do you think of this idea?</p>
+              <p class="bubble">Let’s talk after lunch.</p>
+              <p class="new">New messages</p>
+            </div>
+          </div>
+
+          <div class="win win-notes is-active" data-app="Notes" role="button" tabindex="0" aria-pressed="true" aria-label="Notes is in focus">
+            <div class="win-bar"><span class="tl"><i></i><i></i><i></i></span><span class="win-title">One thing at a time</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z" /></svg></div>
+            <div class="win-body doc">
+              <p class="doc-label">A space to think</p>
+              <p class="doc-h">Good ideas need<br>room to grow.</p>
+              <p class="doc-p">Not more tabs. Not more notifications.<br>Just a little calm to pick up where I left off.</p>
+              <p class="doc-cursor" aria-hidden="true"><span></span></p>
+            </div>
+          </div>
+
+          <aside class="panel" aria-label="Vidrado focus controls">
+            <div class="p-head">
+              <svg class="mark" viewBox="0 0 96 96" fill="currentColor" aria-hidden="true"><g transform="translate(12 25.49845)"><path d="M37.80924 0l-32.5477 0c-2.97231 0-5.26154 2.30769-5.26154 5.26154l0 25.84616c0 2.99077 2.28923 5.18769 5.26154 5.18769l31.93846 0c2.99076 0 5.07692-2.19692 5.07692-5.18769l0-26.93539c0-2.41846-1.84615-4.17231-4.46769-4.17231z m-0.68309 31.1077c0 0.09231-0.05538 0.12923-0.12923 0.12923l-31.88307 0c-0.12923 0-0.20308-0.05539-0.20308-0.12923l0-25.69847c0-0.09231 0.11077-0.14769 0.35077-0.14769l31.66154 0c0.12923 0 0.20307 0.05539 0.20307 0.14769l0 25.69847z"/></g><g transform="translate(33.8769 16)"><path d="M29.55693 0l-27.56308 0c-1.31077 0-1.99385 0.75692-1.99385 1.82769 0 1.10769 0.86769 1.86461 2.0677 1.86461l27.08307 0c0.25846 0 0.3877 0.09231 0.38769 0.29539l0 23.74154c0 1.45847 0.83077 2.12308 1.86462 2.12308 1.05231 0 1.82769-0.79384 1.82769-2.10462l0-24.07384c0-2.16-1.60616-3.67385-3.67384-3.67385z"/></g></svg>
+              <span class="p-word">vidrado</span>
+              <span class="p-space"></span>
+              <span class="p-gear" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 5H3" /><path d="M12 19H3" /><path d="M14 3v4" /><path d="M16 17v4" /><path d="M21 12h-9" /><path d="M21 19h-5" /><path d="M21 5h-7" /><path d="M8 10v4" /><path d="M8 12H3" /></svg></span>
+            </div>
+            <div class="p-status">
+              <p class="p-eyebrow" id="focusEyebrow">Distractions, out of sight</p>
+              <p class="p-headline" id="focusHeadline" aria-live="polite">You’re in the clear.</p>
+              <div class="p-viz" aria-hidden="true">
+                <span class="viz-side"><i></i><i></i><i></i></span>
+                <span class="viz-side"><i></i><i></i><i></i></span>
+                <span class="viz-main"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z" /><path d="M14 2v5a1 1 0 0 0 1 1h5" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></svg><em>Just this. Nothing else.</em><i></i></span>
+              </div>
+              <p class="p-follow"><span class="fdot"></span>Following&nbsp;<strong id="activeApp">Notes</strong></p>
+            </div>
+            <button class="p-pause" id="pauseBtn" type="button" aria-pressed="false">
+              <svg class="ic ic-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="14" y="3" width="5" height="18" rx="1" /><rect x="5" y="3" width="5" height="18" rx="1" /></svg>
+              <svg class="ic ic-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z" /></svg>
+              <span id="pauseLabel">Pause focus</span>
+            </button>
+            <div class="p-slider">
+              <div class="p-slider-row"><label for="intensity">Hide distractions</label><output id="intensityVal" for="intensity">65%</output></div>
+              <input type="range" id="intensity" min="0" max="100" value="65" step="1" aria-describedby="intensityVal">
+              <div class="p-scale"><span>A little quieter</span><span>Nothing but focus</span></div>
+            </div>
+            <div class="p-modes" role="group" aria-label="Focus modes">
+              <button type="button" data-mode="light" aria-pressed="false"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2" /><path d="M12 20v2" /><path d="m4.93 4.93 1.41 1.41" /><path d="m17.66 17.66 1.41 1.41" /><path d="M2 12h2" /><path d="M20 12h2" /><path d="m6.34 17.66-1.41 1.41" /><path d="m19.07 4.93-1.41 1.41" /></svg><span>Light</span></button>
+              <button type="button" data-mode="balanced" aria-pressed="true"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="1" /><circle cx="12" cy="12" r="10" /></svg><span>Balanced</span></button>
+              <button type="button" data-mode="deep" aria-pressed="false"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="M12 2a7 7 0 1 0 10 10" /></svg><span>Deep</span></button>
+            </div>
+            <div class="p-exc">
+              <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2" /><path d="M3 9h18" /><path d="M9 21V9" /></svg>
+              <span>Keep some apps clear</span>
+              <span class="p-space"></span>
+              <em>2 apps</em>
+              <svg class="ic dim" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+            </div>
+            <div class="p-foot"><span>⌥⌘B&nbsp;&nbsp;to toggle anytime</span><span>On-device. Always.</span></div>
+          </aside>
+        </div>
+      </div>
+      <div class="caption rv">
+        <p>Your desktop is still there. The distractions take a back seat.</p>
+        <p class="live" id="liveBadge"><span class="dot" aria-hidden="true"></span><span id="liveText">Focus active</span></p>
+      </div>
+      <p class="hint rv">Live demo — drag <strong>Hide distractions</strong>, or click a background window to bring it into focus.</p>
+    </section>
+
+    <!-- How it works -->
+    <section class="how wrap" id="how">
+      <div class="how-head">
+        <h2 class="rv">Your attention deserves<br>fewer interruptions.</h2>
+        <p class="rv" data-d="1">Nothing to organize. No windows to close.<br>Just keep doing what you do.</p>
+      </div>
+      <div class="benefits">
+        <article class="rv">
+          <svg class="ic big" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2" /><path d="M17 3h2a2 2 0 0 1 2 2v2" /><path d="M21 17v2a2 2 0 0 1-2 2h-2" /><path d="M7 21H5a2 2 0 0 1-2-2v-2" /></svg>
+          <h3>Only the essentials stand out</h3>
+          <p>Your active window stays clear. Everything else gets blurred, dimmed, or both.</p>
+        </article>
+        <article class="rv" data-d="1">
+          <svg class="ic big" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.037 4.688a.495.495 0 0 1 .651-.651l16 6.5a.5.5 0 0 1-.063.947l-6.124 1.58a2 2 0 0 0-1.438 1.435l-1.579 6.126a.5.5 0 0 1-.947.063z" /></svg>
+          <h3>Focus follows you</h3>
+          <p>Switch windows and Vidrado follows. Without breaking your flow.</p>
+        </article>
+        <article class="rv" data-d="2">
+          <svg class="ic big" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 5H3" /><path d="M12 19H3" /><path d="M14 3v4" /><path d="M16 17v4" /><path d="M21 12h-9" /><path d="M21 19h-5" /><path d="M21 5h-7" /><path d="M8 10v4" /><path d="M8 12H3" /></svg>
+          <h3>Just right for your day</h3>
+          <p>From a subtle effect to deep focus, adjust the intensity with a single control.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Rules -->
+    <section class="rules" id="mac">
+      <div class="wrap rules-in">
+        <div class="rules-card rv">
+          <div class="rules-head">
+            <h3>Every app, your way.</h3>
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2" /><path d="M3 9h18" /><path d="M9 21V9" /></svg>
+          </div>
+          <p class="rules-cols"><span>Application</span><span>Behavior</span></p>
+          <ul>
+            <li><span class="tile"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4" /><path d="M2 6h4" /><path d="M2 10h4" /><path d="M2 14h4" /><path d="M2 18h4" /><path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z" /></svg></span><span class="app">Notes</span><span class="pill">Auto blur<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></span></li>
+            <li><span class="tile"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z" /></svg></span><span class="app">Safari</span><span class="pill">Auto blur<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></span></li>
+            <li><span class="tile"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="18" r="4" /><path d="M12 18V2l7 4" /></svg></span><span class="app">Music</span><span class="pill solid">Keep clear<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></span></li>
+            <li><span class="tile"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2" /><line x1="8" x2="16" y1="6" y2="6" /><line x1="16" x2="16" y1="14" y2="18" /><path d="M16 10h.01" /><path d="M12 10h.01" /><path d="M8 10h.01" /><path d="M12 14h.01" /><path d="M8 14h.01" /><path d="M12 18h.01" /><path d="M8 18h.01" /></svg></span><span class="app">Calculator</span><span class="pill solid">Keep clear<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></span></li>
+            <li><span class="tile"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h20" /><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3" /><path d="m7 21 5-5 5 5" /></svg></span><span class="app">Keynote</span><span class="pill solid">Pause focus<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></span></li>
+            <li><span class="tile"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5" /><rect x="2" y="6" width="14" height="12" rx="2" /></svg></span><span class="app">FaceTime</span><span class="pill solid">Pause focus<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></span></li>
+          </ul>
+        </div>
+        <div class="rules-copy">
+          <p class="kicker rv">Made for the way you work</p>
+          <h2 class="rv" data-d="1">Less distraction.<br>Not less control.</h2>
+          <p class="rv" data-d="2">Keep your essential apps clear, or pause the effect when a specific app is active. You decide what stays in focus.</p>
+          <p class="shortcut rv" data-d="3"><kbd>⌥&nbsp;&nbsp;⌘&nbsp;&nbsp;B</kbd><span>Your focus, one shortcut away.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy -->
+    <section class="privacy" id="privacy">
+      <div class="wrap privacy-in">
+        <div>
+          <svg class="ic big light rv" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></svg>
+          <h2 class="rv" data-d="1">Your work is yours.<br>And it stays that way.</h2>
+        </div>
+        <div>
+          <p class="rv">Vidrado runs entirely on your Mac. It doesn’t read your documents, record your screen, or send your data anywhere.</p>
+          <ul class="trust rv" data-d="1">
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span>No tracking</span></li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span>No account</span></li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span>100% local</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download -->
+    <section class="closing wrap" id="download">
+      <svg class="mark mark-lg rv" viewBox="0 0 96 96" fill="currentColor" aria-hidden="true"><g transform="translate(12 25.49845)"><path d="M37.80924 0l-32.5477 0c-2.97231 0-5.26154 2.30769-5.26154 5.26154l0 25.84616c0 2.99077 2.28923 5.18769 5.26154 5.18769l31.93846 0c2.99076 0 5.07692-2.19692 5.07692-5.18769l0-26.93539c0-2.41846-1.84615-4.17231-4.46769-4.17231z m-0.68309 31.1077c0 0.09231-0.05538 0.12923-0.12923 0.12923l-31.88307 0c-0.12923 0-0.20308-0.05539-0.20308-0.12923l0-25.69847c0-0.09231 0.11077-0.14769 0.35077-0.14769l31.66154 0c0.12923 0 0.20307 0.05539 0.20307 0.14769l0 25.69847z"/></g><g transform="translate(33.8769 16)"><path d="M29.55693 0l-27.56308 0c-1.31077 0-1.99385 0.75692-1.99385 1.82769 0 1.10769 0.86769 1.86461 2.0677 1.86461l27.08307 0c0.25846 0 0.3877 0.09231 0.38769 0.29539l0 23.74154c0 1.45847 0.83077 2.12308 1.86462 2.12308 1.05231 0 1.82769-0.79384 1.82769-2.10462l0-24.07384c0-2.16-1.60616-3.67385-3.67384-3.67385z"/></g></svg>
+      <h2 class="rv" data-d="1">Make room for what matters.</h2>
+      <p class="rv" data-d="2">Your windows don’t need to disappear. Just get out of the way.</p>
+      <div class="rv" data-d="3">
+        <a class="btn btn-big" href="https://github.com/tonhadaplaces/vidrado/releases"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 17V3" /><path d="m6 11 6 6 6-6" /><path d="M19 21H5" /></svg><span>Download Vidrado</span></a>
+      </div>
+      <p class="req rv" data-d="4">For macOS 14 or later&nbsp;&nbsp;·&nbsp;&nbsp;No subscription</p>
+      <p class="note rv" data-d="5">Independently distributed. Not yet notarized by Apple.<br><a href="https://github.com/tonhadaplaces/vidrado#install">View installation instructions&nbsp;↗</a></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-in">
+      <span class="wordmark">vidrado</span>
+      <span class="promise">Less noise. More clarity.</span>
+      <span class="foot-links">
+        <a href="https://github.com/tonhadaplaces/vidrado" rel="noopener">GitHub&nbsp;↗</a>
+        <a href="https://github.com/tonhadaplaces/vidrado/releases">Release notes&nbsp;↗</a>
+      </span>
+    </div>
+  </footer>
+
+  <script src="assets/site.js" defer></script>
+</body>
+</html>
