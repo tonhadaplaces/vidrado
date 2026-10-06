@@ -1,5 +1,7 @@
 # Third-party notices
 
+The promotional site in [`docs/`](docs/) reuses the Inter font and inline Lucide icon artwork under the same licenses below.
+
 ## Inter
 
 Inter font files are bundled under the SIL Open Font License 1.1. The full license and copyright notice are preserved in [Inter-OFL.txt](Sources/VidradoCore/Resources/Brand/Inter-OFL.txt).

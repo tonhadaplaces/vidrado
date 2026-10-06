@@ -1,0 +1,92 @@
+name: Pages
+
+on:
+  push:
+    branches: [main]
+    paths: ['docs/**', '.github/workflows/pages.yml']
+  pull_request:
+    branches: [main]
+    paths: ['docs/**', '.github/workflows/pages.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    name: Validate site
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Check JavaScript syntax
+        run: node --check docs/assets/site.js
+      - name: Validate HTML and asset references
+        run: |
+          python3 - <<'EOF'
+          import os
+          import re
+          import sys
+          from html.parser import HTMLParser
+
+          VOID = {"meta", "link", "br", "img", "input", "hr", "source"}
+
+
+          class Checker(HTMLParser):
+              def __init__(self):
+                  super().__init__(convert_charrefs=True)
+                  self.stack = []
+                  self.errors = []
+
+              def handle_starttag(self, tag, attrs):
+                  if tag not in VOID:
+                      self.stack.append((tag, self.getpos()))
+
+              def handle_endtag(self, tag):
+                  if tag in VOID:
+                      return
+                  if self.stack and self.stack[-1][0] == tag:
+                      self.stack.pop()
+                  else:
+                      self.errors.append(f"mismatched </{tag}> at {self.getpos()}")
+
+          src = open("docs/index.html", encoding="utf-8").read()
+          checker = Checker()
+          checker.feed(src)
+          if checker.stack:
+              checker.errors.append(f"unclosed tags: {checker.stack}")
+
+          refs = sorted(set(re.findall(r'(?:src|href)="(assets/[^"]+)"', src)))
+          missing = [r for r in refs if not os.path.exists(os.path.join("docs", r))]
+          if missing:
+              checker.errors.append(f"missing assets: {missing}")
+
+          if checker.errors:
+              print("\n".join(checker.errors))
+              sys.exit(1)
+          print(f"index.html OK, {len(refs)} asset references resolve")
+          EOF
+
+  deploy:
+    name: Deploy to GitHub Pages
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: docs
+      - id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
